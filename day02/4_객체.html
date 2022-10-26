@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 함수</title>
+</head>
+
+<body>
+    <script>
+        function onClickLogin() {
+            let login = {
+                id: document.getElementById(`user_id`).value,
+                pw: document.getElementById(`user_pw`).value
+            }
+
+            console.log(login);
+        }
+    </script>
+
+    <h2>로그인 기능!</h2>
+    <input type="text" id="user_id">
+    <input type="password" id="user_pw">
+    <button onclick="onClickLogin()">로그인!</button>
+</body>
+
+</html>

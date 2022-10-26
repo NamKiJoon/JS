@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <script>
+        function SignUp() {
+            const USER_ID = document.getElementsByName("user_id")[0];
+            const USER_PW = document.getElementsByName("user_pw")[0];
+            const USER_EMAIL = document.getElementsByName("user_email")[0];
+            const USER_CHECK = document.getElementsByName("user_check")[0];
+
+            const data = {
+                ID: USER_ID.value,
+                PW: USER_PW.value,
+                EMAIL: USER_EMAIL.value,
+                CHECK: 0,
+            };
+
+            if (USER_CHECK.checked === true) {
+                data["CHECK"] = parseInt(USER_CHECK.value);
+            };
+
+
+
+            console.log(data);
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <p>아이디 입력 : <input type="text" name="user_id" id=""></p>
+    <p>비밀번호 입력 : <input type="password" name="user_pw" id=""></p>
+    <p>이메일 입력 : <input type="email" name="user_email" id=""></p>
+    <p>동의 하십니까 ? <input type="checkbox" value="1" name="user_check" id=""></p>
+
+    <button onclick="SignUp()">회원 가입</button>
+</body>
+
+</html>

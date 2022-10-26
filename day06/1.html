@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+</head>
+
+<body>
+    <h2>가입</h2>
+    <p>아이디 입력 : <input type="text" name="user_id"></p>
+    <p>비밀번호 입력 : <input type="password" name="user_pw"></p>
+    <p>수신 동의<input type="checkbox" name="user_check" value="1"></p>
+
+    <button onclick="USER_SIGN()">회원가입</button>
+
+
+    <script>
+        function USER_SIGN() {
+            const USER_ID = document.getElementsByName("user_id")[0];
+            const USER_PW = document.getElementsByName("user_pw")[0];
+            const USER_CHECK = document.getElementsByName("user_check")[0];
+            const data = {
+                ID: USER_ID.value,
+                PW: USER_PW.value,
+                BOX: 0,
+            }
+            if (USER_CHECK.checked === true) {
+                data["BOX"] = USER_CHECK.value;
+            }
+            console.log(data);
+        }
+    </script>
+</body>
+
+</html>

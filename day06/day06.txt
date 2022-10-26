@@ -1,0 +1,78 @@
+--------------------------------------------------------------------------------------
+
+
+    DOM => 문서객체모델
+
+1.document.getElementById()
+    =>단일 객체 반환
+
+2.document.getElementsByClassName()
+    =>n개, *배열 반환
+
+
+    ex)
+    <ul id="menu_list>
+        <li class="menu_item">></li>
+        <li class="menu_item">></li>
+        <li class="menu_item">></li>
+        <li class="menu_item">></li>
+    </ul>
+
+ex)
+
+    document_getElementsByClassName("menu_item")
+    =? const MENU_ITEM = [<li></li>,<li></li>,<li></li>,<li></li>]
+    MENU_ITEM[1].style.display = "none"
+
+--------------------------------------------------------------------------------------
+
+3.document.querySelector()
+    ()안의 CSS 선택자로 선택되는 요소를 "하나" 가지고 옴
+
+        ex)document.querySelector("#menu_list > li")
+
+4.document.querySelectorAll()
+    ()안의 CSS 선택자로 선택되는 요소를 모두 가지고옴! => 단일객체도 가능 => 배열
+
+    [0]
+
+5.document.getElementsByName()
+    ()안의 name 속성 값을 가진 모든 요소를 불러옴 => *배열
+
+6.document.getElementsByTagName()
+    ()안의 태그를 가진 모든 요소를 불러옴 => *배열
+
+
+
+===================================================================================
+
+    함수의 형태
+
+    1. 일반적인 함수형
+    function 함수명(매개변수){
+
+    }
+
+    2. 화살표 함수형
+    const 함수명 = (매개변수) =>{
+
+    }
+
+    3. 이름이 없는 함수 // 함수명이 있는 함수[기명함수]
+        => 재사용되지 않을 함수명
+        
+        => html에 함수 로직
+        
+    <button onclick="함수명()"></button>
+    <button onclick="()=>{consolo.log("test")}></button>
+    
+
+////////////////////////////////////////////////////////////////////////////////////
+
+0. 버튼 이벤트 객체
+
+1. 배너 만들기(자동배너) //setTimeout , setInterval
+
+2. 무한 반복 배너 만들기
+
+3. 이벤트 버블링 제어

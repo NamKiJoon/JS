@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>promise</title>
+</head>
+
+<body>
+    <script>
+        // 비동기 흐름 뒤에 써야만 하는 로직
+        // 내부 함수는 중요하지 않아요
+        const callback = (number) => {
+            setTimeout(() => {
+                number = number + 1;
+                console.log(number);
+            }, 1000);
+        };
+
+        let a = 5;
+        const pr = new Promise((ok, fail) => {
+            setTimeout(() => {
+                a = a + 1;
+                if (a === 6) {
+                    ok(a); // a = 6
+                } else {
+                    fail("실패");
+                }
+            }, 1000);
+        });
+
+        pr.then((response) => {
+            console.log(response);
+            callback(response);
+            return response + 1;
+        })
+            .catch((err) => {
+                console.error(err);
+            });
+    </script>
+</body>
+
+</html>

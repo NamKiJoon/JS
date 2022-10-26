@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for 문</title>
+    <script>
+        let obj = {
+            name: "남기준",
+            age: 20,
+            hobby: `야구`
+        }
+
+        let arr = [1, 2, 3]
+
+        //for in
+        //for in 자바스크립트 초기부터 존재했음!
+
+        for (let feat in obj) {
+            console.log(`${feat} 은 ${obj[feat]}`)
+        };
+
+        //for each
+        //배열의 반복문 콜백함수 리턴, 배열의 값, 키 ,순환하는 배열
+        arr.forEach((number, index, arr) => {
+            console.log(number) //배열안의 값
+            console.log(index)//index
+            console.log(arr)//foreach가 돌어가고 있는 배열 자체
+        })
+
+        //for of
+        //ES6 이후 추가된 가장 최신 문법
+        //await 기능 지원!
+        //순환하는 배열의 값만 가지고 올 수 있다!
+
+        const num = [1, 2, 3, 4, 5,]
+        for (let number of arr) {
+            console.log(number)
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

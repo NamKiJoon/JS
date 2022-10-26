@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>배열2</title>
+        <script>
+            let arr = ["apple", "김성용", "김사과", 10];
+            arr.push("손흥민");
+            console.log(arr[4]);
+            console.log(arr[arr.length - 1]);
+            console.log(arr[arr.length - 1]);
+
+            let str = arr.shift(); // () => 실행문
+            // shift는 첫번째 값을 삭제하고 삭제한 값을 반환한다
+            console.log(arr.length);
+            console.log(arr);
+            alert(str);
+
+            // 첫번째 인덱스 포함하여 두번째 인덱스까지 포함하지 않는 배열 반환
+            // slice
+            let arr2 = arr.slice(1, 3); // 1~3(3x), 1,2 => 김사과, 10
+            console.log(arr2);
+            console.log(arr); // 김성용 김사과 10 손흥민
+
+            // splice
+            // 첫번째 인덱스에서부터 두번째 인덱스 값까지 삭제한 배열 반환
+            let arr3 = arr.splice(0, 2);
+            console.log(arr3); // 10, 손흥민을 제외한 값
+
+            let arr4 = [10, 20, 30];
+            let arr5 = [40, 50, 60];
+            let arr6 = arr4.concat(arr5);
+            console.log(arr4); // 10 ~ 30
+            console.log(arr6); // 10 ~ 60
+
+            // concat은 두개의 배열이 합쳐진 새로운 배열을 반환
+            // a.concat(b) => [a, b]
+            // a랑 b는 그대로고 새로운 배열을 반환
+        </script>
+    </head>
+    <body></body>
+</html>

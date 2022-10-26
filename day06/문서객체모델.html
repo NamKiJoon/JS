@@ -1,0 +1,66 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체모델</title>
+    <script>
+        // 현재 html을 모두 읽고 나서 실행
+        window.onload = function () {
+            const MENU_LIST = document.getElementById("menu_list");
+            MENU_LIST.style.background = "red";
+            MENU_LIST.classList.add("on");
+            MENU_LIST.style.display = "block";
+            // class = "on"
+            /* 
+                .menu_item {
+                    display: none
+                }
+
+                .on {
+                    dislay: block
+                }
+            */
+            const MENU_ITEM = document.getElementsByClassName("menu_item");
+            console.log(MENU_ITEM);
+
+            for (let i = 0; i < MENU_ITEM.length; i++) {
+                console.log(MENU_ITEM[i]);
+                MENU_ITEM[i].classList.add("on");
+            }
+            // 평일 동안 할 것 각 태그의 properties 한번씩만 보기만
+        };
+    </script>
+    <style>
+        #menu_list {
+            display: none;
+        }
+
+        .menu_item {
+            display: none;
+        }
+
+        .on {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>문서 객체 모델</h2>
+    <ul id="menu_list" class="on" style="background: red; display: block;">
+        <li class="menu_item on">1</li>
+        <li class="menu_item on">2</li>
+        <li class="menu_item on">3</li>
+        <li class="menu_item on">4</li>
+    </ul>
+    <script>
+        const MENU_LIST = document.getElementById("menu_list");
+        console.log(MENU_LIST);
+    </script>
+
+
+</body>
+
+</html>

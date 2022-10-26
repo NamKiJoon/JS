@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>반복문</title>
+        <script>
+            // while
+            let num = 1;
+
+            while (num < 10) {
+                num += 1; // num = num + 1
+                console.log(`현재 숫자는 ${num}입니다`);
+            }
+
+            let num2 = 10;
+            do {
+                console.log(`현재 숫자는 ${num2}입니다`);
+            } while (num2 < 9);
+
+            let num3 = 0;
+            while (true) {
+                num3 += 1;
+                console.log("무한 반복 중", num3);
+                if (num3 > 5) {
+                    break;
+                }
+            }
+
+            // for
+            for (let i = 0; i < 10; i++) {
+                console.log(`현재숫자는${i + 1}입니다`);
+            }
+
+            for (let i = 10; i > 0; i--) {
+                console.log(`현재숫자는${i + 1}입니다`);
+            }
+
+            // 증감연산자
+            // 증가연산자, 감소연산자 (++, --)
+            // 후위연산자, 전위연산자
+            // (i++), (--i)
+            /* 
+                let num = 5;
+
+                (--num) if(num=5){} = 실행 x 전위 연산자
+                (num--) if(num=5){} = 실행 o 후위 연산자
+
+                {
+                    let num1 = 1;
+                    num2 = num1++ ---> ++num1
+                    console.log(num2) / 1 -> 2
+                }
+
+            */
+
+            let num1 = 1; // 지역변수 전역변수
+            for (let i = 0; i < 5; i++) {
+                // i만큼 반복
+                // let num2 = num1++; -> 1~5
+                let num2 = ++num1; // 2~6
+                console.log(num2);
+            }
+
+            /* 
+                let num = 1;
+                num += 1 ---> 2; (num = num + 2)
+                num += 2 ---> 4;
+                num -= 2 ---> 2;
+
+                let str = "안녕하세요";
+                str += "김성용" ---> 안녕하세요 김성용 (str = str + "김성용")
+                str -= "김성용" ---> nan, error
+            
+            */
+        </script>
+    </head>
+    <body></body>
+</html>

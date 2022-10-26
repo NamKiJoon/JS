@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+
+            const post = [{
+                id: 1,
+                title: "오늘저녁은 한우",
+                hit: 202,
+                like: 500,
+            },
+            {
+                id: 2,
+                title: "오늘저녁은 족발",
+                hit: 2,
+                like: 200,
+            },
+            {
+                id: 3,
+                title: "오늘저녁은 치킨",
+                hit: 222,
+                like: 205,
+            },
+            {
+                id: 4,
+                title: "오늘저녁은 삼겹살",
+                hit: 272,
+                like: 248,
+            }];
+
+            const content = document.getElementById("post_content");
+            console.log(content);
+
+            for (let i = 0; i < post.length; i++) {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                <td>${post[i].id}</td>
+                <td>${post[i].title}</td>
+                <td>${post[i].hit}</td>
+                <td>${post[i].like}</td>
+                `;
+
+                content.append(row);
+            }
+
+            //03:19:19 부터 시작!
+
+
+            // const row = document.createElement("tr");
+            // //요소를 만들어내는 속성
+            // //row => tr!
+
+            // row.innerHTML = `<div>안녕하세요</div>`;
+            // //html 속성을 바꾸는 것!
+            // //row => tr
+            // content.append(row);
+
+
+            // content.innerHTML = `<div>안녕하세요</div>`;
+
+
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th>번호</th>
+            <th>제목</th>
+            <th>조회수</th>
+            <th>좋아요</th>
+        </thead>
+        <tbody id="post_content">
+
+        </tbody>
+    </table>
+</body>
+
+</html>

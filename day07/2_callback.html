@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callback</title>
+</head>
+
+<body>
+    <script>
+        const settimeoutPrint = (number, callback) => {
+            setTimeout(() => {
+                console.log(number);
+                callback(number)
+            }, 1000);
+        };
+
+        const printNum = (number) => {
+            console.log(number);
+        }
+
+        settimeoutPrint(5, printNum);
+
+        // callback(5, callback(5, callback(5, callback(5, callback))))
+
+        //로직이 실행
+        //콜백이 계속 늘어난다 = 콜백 지옥
+
+        /*
+        콜백함수 자체는 매개변수로 전달받은 함수를 함수내에서 실행하는 것
+        단, 비동기 처리를 위해 콜백함수를 사용하면 콜백 지옥에 빠지기 쉽다
+        */
+
+        //01:38:59 부터 수강!!
+    </script>
+</body>
+
+</html>

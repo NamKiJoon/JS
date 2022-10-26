@@ -1,0 +1,82 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체모델2</title>
+    <script>
+        //1:46:00 부터
+        function onSignUpHandler() {
+            const userId = document.getElementsByName("user_id")[0];
+            const userPw = document.getElementsByName("user_pw")[0];
+            const userNick = document.getElementsByName("user_nick")[0];
+            const userFlag = document.getElementsByName("user_flag")[0];
+            /* 
+            form 태그의 action와 method를 활용하면
+            name의 이름으로 백엔드에게 자동으로 데이터를 전송
+            form 태그 에서는 보통 name을 활용하지만
+            input 타입을 가지고 올 때는 id는 class든 상관 없음
+            */
+
+            const data = {
+                user_id: userId.value,
+                user_pw: userPw.value,
+                user_nick: userNick.value,
+                user_flag: 0,
+            };
+
+            if (userFlag.checked === true) {
+                data["user_flag"] = parseInt(userFlag.value);
+            }
+
+            /* 
+            axios.post("https://www.seongyong.com/user/login", data)
+            .then((res) => {
+                alert("회원가입에 성공하셨습니다")
+            }).catch((err) => {
+                console.error(err)
+            })
+
+            axios.get("https://www.seongyong.com/user", data)
+            .then((res) => {
+                console.log(res)
+                res => cofing, data,....
+                const userInfo = res.data.data;
+
+                //console.log(userInfo)
+                {
+                    user_id: "korpg95274@gmail.com"
+                    user_address: "이태원 어딘가"
+                    user_flag: 1
+                }
+
+                userId.value = userInfo.user_id
+                if(userInfo.user_flag === 1 ){
+                    userflag.checked === true
+                }
+
+            }).catch((err) => {
+                console.error(err)
+            })
+
+
+
+            */
+            console.log(data);
+        }
+    </script>
+</head>
+
+<body>
+    <h2>회원가입</h2>
+    <p>아이디: <input type="text" name="user_id"></p>
+    <p>비밀번호: <input type="text" name="user_pw"></p>
+    <p>닉네임: <input type="text" name="user_nick"></p>
+    <p><input type="checkbox" value="1" name="user_flag">수신 동의</p>
+    <button onclick="onSignUpHandler()" id="sign_up_btn">회원가입</button>
+
+
+</body>
+
+</html>

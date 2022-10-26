@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const pr = (number) =>
+            new Promise((resolve) => {
+                setTimeout(() => {
+                    number = number + 1;
+                    resolve(number);
+                }, 3000)
+            });
+
+
+        const asyncExample2 = async (int) => {
+            console.log(int);
+            int = int + 1;
+            console.log(int);
+            let result = await pr(int);
+            console.log(result);
+            int = int + 1;
+            result = await pr(int);
+            console.log(result);
+            int = int + 1;
+            console.log(int);
+        }
+        //1,2,3,4
+        asyncExample2(1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
